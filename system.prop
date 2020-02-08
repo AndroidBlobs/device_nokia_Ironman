@@ -1,0 +1,125 @@
+#
+# from device/wingtechsh/T99621AA1/system.prop
+#
+#
+# system.prop for generic sdk
+#
+
+vendor.rild.libpath=mtk-ril.so
+vendor.rild.libargs=-d /dev/ttyC0
+
+
+# MTK, Infinity, 20090720 {
+wifi.interface=wlan0
+# MTK, Infinity, 20090720 }
+
+# MTK, mtk03034, 20101210 {
+ro.mediatek.wlan.wsc=1
+# MTK, mtk03034 20101210}
+# MTK, mtk03034, 20110318 {
+ro.mediatek.wlan.p2p=1
+# MTK, mtk03034 20110318}
+
+# MTK, mtk03034, 20101213 {
+mediatek.wlan.ctia=0
+# MTK, mtk03034 20101213}
+
+
+#
+wifi.tethering.interface=ap0
+#
+
+ro.opengles.version=196610
+#ro.kernel.qemu=1
+#ro.kernel.qemu.gles=0
+
+wifi.direct.interface=p2p0
+#dalvik.vm.heapgrowthlimit=256m
+#dalvik.vm.heapsize=512m
+
+# USB MTP WHQL
+ro.sys.usb.mtp.whql.enable=0
+
+# Power off opt in IPO
+sys.ipo.pwrdncap=2
+
+ro.sys.usb.storage.type=mtp
+
+# USB BICR function
+ro.sys.usb.bicr=no
+
+# USB Charge only function
+ro.sys.usb.charging.only=yes
+
+# audio
+ro.camera.sound.forced=0
+ro.audio.silent=0
+
+ro.zygote.preload.enable=0
+
+# temporary enables NAV bar (soft keys)
+qemu.hw.mainkeys=0
+
+ro.kernel.zio=38,108,105,16
+#ro.kernel.qemu=1
+#ro.kernel.qemu.gles=0
+#ro.boot.selinux=disable
+
+# Disable dirty region for Mali
+#debug.hwui.render_dirty_regions=false
+
+# Use density from lcm driver
+#ro.sf.lcd_density=480
+
+# performance
+ro.mtk_perf_simple_start_win=1
+ro.mtk_perf_fast_start_win=1
+ro.mtk_perf_response_time=1
+
+# disable ipo for development
+sys.ipo.disable=1
+
+#bug455181,liufeijun.wt,modify,20190703,start
+com.mediatek.log.mobile.enabled = true
+com.mediatek.log.modem.enabled = true
+com.mediatek.log.net.enabled = true
+com.mediatek.log.gps.enabled = true
+#bug455181,liufeijun.wt,modify,20190703,end
+#IRM-1044 gaojunfeng.wt 20190724 start
+persist.function_for_sar_log_trigger = 0
+#chk32312 feature need open by default 20191015 begin
+persist.switch.reduce.sar_power = 1
+#chk32312 feature need open by default 20191015 end
+#IRM-1044 gaojunfeng.wt 20190724 end
+
+#IRM-1964,anpengqi,wt,20190812 begin
+#set setupwizard rotation lock
+ro.setupwizard.rotation_locked=true
+#IRM-1964,anpengqi,wt,20190812 end
+#IRM-1570 leijinxian.wt 20190805 start
+ro.com.google.rlz_ap_whitelist=YH
+ro.com.google.rlzbrandcode=HMDG
+#IRM-1570 leijinxian.wt 20190805 end
+#begin added by Chris.wt for IRM-1883 at 20190815
+vendor.camera.aux.packagelist=com.mediatek.camera,com.hmdglobal.app.camera,com.wt.calibrationcamera,com.wt.verify.camera
+vendor.camera.aux.packagelist2=com.hmdglobal.app.fqccamera
+#end added by Chris.wt for IRM-1883 at 20190815
+
+#+chk32363,renkai add to disable LTE B40 for MCC:310/311/312 20190824
+persist.sys.manual_select_band=false
+#-chk32363,renkai add to disable LTE B40 for MCC:310/311/312 20190824
+
+#+IRM-667, wuxuanhang.wt, add for forbid SetupWizard to open mobile data, 20190820
+ro.com.android.prov_mobiledata=false
+#-IRM-667, wuxuanhang.wt, add for forbid SetupWizard to open mobile data, 20190820
+
+#added by chenhuibu.wt for IRM-1398 at 20190827
+ro.opa.device_model_id=hmd2019products-ironman-okdrbn
+
+#add by xunyuan for IRM-4114 in 20190916
+ro.com.google.acsa = true
+
+#add by zhanglei6 for IRM-4694 to support viwifi 20191011
+persist.vendor.mtk.viwifi.enable=1
+
+#

@@ -1,0 +1,25 @@
+#INTERNAL_START
+on post-fs
+
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+on boot
+
+service spm_script /vendor/bin/spm_loader
+    user system
+    group system
+    oneshot
+#INTERNAL_END
+
+#bug438047,zhaodonghong.wt,add,20190723,start
+service check_keymaster /vendor/bin/check_keymaster
+    class core
+    user system
+    group system
+    oneshot
+    disabled
+    seclabel u:r:check_keymaster:s0
+
+#bug438047,zhaodonghong.wt,add,20190723,end
